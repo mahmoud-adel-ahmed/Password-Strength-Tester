@@ -23,12 +23,13 @@ function updateProgressMeter() {
     messageElement.innerHTML = "Your Password is strong";
     reasonsContainer.appendChild(messageElement);
   }
+
   progressMeter.style.setProperty("--strength", strength);
 }
 
 function calcPasswordStrength(password) {
-  console.log(inputPassword.value);
   let reasons = [];
+
   reasons.push(lengthCriteria(password));
   reasons.push(repeatCharsCriteria(password));
   reasons.push(whichCaseCriteria(password, /[a-z]/g, "Lowercase"));
@@ -61,7 +62,7 @@ function lengthCriteria(password) {
 function whichCaseCriteria(password, regex, Case) {
   let matches = password.match(regex) || [];
 
-  if (!matches) {
+  if (matches.length === 0) {
     return {
       reason: `Your Password has no ${Case} letters`,
       deduction: 20,
