@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  background-color: hsl(261, 88%, 17%);
+  color: hsl(261, 88%, 90%);
+  text-align: center;
+}
+
+h1 {
+  padding: 1rem 0;
+}
+.progress-meter {
+  position: relative;
+  width: 90%;
+  height: 2.5rem;
+  border: 3px solid hsl(261, 88%, 57%);
+  margin: 0 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.progress-meter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: calc(1% * var(--strength, 0));
+  height: 100%;
+  background: hsl(261, 88%, 67%);
+  transition: width 200ms linear;
+}
+
+.input-password {
+  margin-top: 1.5rem;
+  width: 90%;
+  padding: 0.6rem;
+  background-color: hsl(261, 88%, 25%);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(261, 88%, 57%);
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  outline: 0;
+  text-align: center;
+}
+
+.input-password::placeholder {
+  color: hsl(261, 88%, 75%);
+  text-transform: capitalize;
+}
+
+.input-password:focus {
+  border-color: hsl(261, 88%, 70%);
+}
+
+.reasons > * {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  color: hsl(261, 88%, 85%);
+}
+
+.reasons {
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
